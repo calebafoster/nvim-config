@@ -67,4 +67,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 require('lspconfig').lua_ls.setup({})
-require('lspconfig').basedpyright.setup({})
+require('lspconfig').basedpyright.setup({
+    settings = {
+        basedpyright = {
+            analysis = {
+                typeCheckingMode = 'basic'
+            },
+        },
+    },
+})
