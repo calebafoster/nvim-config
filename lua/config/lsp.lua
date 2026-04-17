@@ -1,2 +1,2 @@
 vim.lsp.enable("lua_ls");
-vim.lsp.enable("basedpyright");
+vim.lsp.enable("pyright");
