@@ -46,6 +46,8 @@ vim.opt.updatetime = 50
 
 vim.g.maplocalleader = "\\"
 
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Expand diagnostic error" })
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
