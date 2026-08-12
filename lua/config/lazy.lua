@@ -46,8 +46,6 @@ vim.opt.updatetime = 50
 
 vim.g.maplocalleader = "\\"
 
-require("mason").setup()
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
