@@ -16,15 +16,8 @@ end
 if is_godot_project then
     local pipe_addr
     if vim.fn.has('win32') == 1 then
-        -- Windows named pipes live in the \\.\pipe\ namespace, not the
-        -- regular filesystem, so serverstart fails with "permission denied"
-        -- if given a raw drive-letter path. Derive a flat, sanitized
-        -- per-project pipe name instead. This must use the same
-        -- sanitization rule as each project's tools/open_in_nvim.bat
-        -- wrapper so both sides agree on the address.
         pipe_addr = '\\\\.\\pipe\\godot-nvim-' .. godot_project_path:gsub('[%s:\\/]', '-')
     else
-        -- On Unix, a socket file at a real filesystem path works fine.
         pipe_addr = godot_project_path .. '/server.pipe'
     end
 
